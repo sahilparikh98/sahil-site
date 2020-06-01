@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar-brand, .nav-link {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-link .navbar-nav {
+  color: black;
+}
+
+.main-content {
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding-top: 20%;
+}
+
