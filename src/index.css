@@ -16,7 +16,7 @@ code {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.nav-link .navbar-nav {
+.navbar-light .navbar-collapse .navbar-nav .nav-link {
   color: black;
 }
 
