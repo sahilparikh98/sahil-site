@@ -1,27 +1,40 @@
 import React from 'react';
 import './App.css';
 import {Navbar, Nav, Container} from 'react-bootstrap';
-import DocumentTitle from 'react-document-title'
+import DocumentTitle from 'react-document-title';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import About from './views/About';
 
 function App() {
   return (
     <DocumentTitle title="sahil parikh">
       <Container fluid>
         <Navbar bg="clear" expand="lg">
-          <Navbar.Brand href="#home">sahil parikh</Navbar.Brand>
+          <Navbar.Brand href="/">sahil parikh</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="#home">home</Nav.Link>
-              <Nav.Link href="#link">about</Nav.Link>
-              <Nav.Link href="#link">projects</Nav.Link>
-              <Nav.Link href="#link">creative</Nav.Link>
+              <Nav.Link href="/">home</Nav.Link>
+              <Nav.Link href="/about">about</Nav.Link>
+              <Nav.Link href="/projects">projects</Nav.Link>
+              <Nav.Link href="/creative">creative</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <div className="main-content">
-          <h1>hi! i'm sahil parikh. i'm currently an engineer at yext.</h1>
-        </div>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <div className="main-content">
+                <h1>
+                  hi! i'm sahil parikh. i'm currently an engineer at yext.
+                </h1>
+              </div>
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+          </Switch>
+        </Router>
       </Container>
     </DocumentTitle>
   );
