@@ -2,6 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import {Container, Row, Col} from 'react-bootstrap';
 import WorkExperience from '../components/WorkExperience';
+import SocialMedia from '../components/SocialMedia';
 
 const jobs = [
   {
@@ -50,9 +51,30 @@ export default class About extends React.Component {
         <Container>
           <div className="main-content">
             <Row>
-              <Col sm={5}>profile picture</Col>
+              <Col sm={5}>
+                <h3>about me:</h3>
+                <p className="row-spacing">
+                  I recently graduated from The University of Texas at Austin
+                  with a degree in computer science and a minor in business. I’m
+                  a builder by nature, and I love working on products that don’t
+                  stop at just solving a problem, but inducing delight. My
+                  technical interests lie in whatever people interact with, but
+                  mainly front-end development and iOS app development.
+                </p>
+                <p>
+                  My non-technical interests mostly take up in writing, comedy,
+                  cooking and coffee. Email me if you want to talk about any of
+                  these, or none of these, I promise you that I can be a very
+                  fun email buddy. Or find me on any of the social networks.
+                </p>
+                <SocialMedia
+                  twitter="https://twitter.com/sahilparikh98"
+                  instagram="https://instagram.com/sahilparikh98"
+                  linkedin="https://linkedin.com/sparikh98"
+                />
+              </Col>
               <Col sm={7}>
-                <h3>work experience:</h3>
+                <h3>work:</h3>
                 {this.createWorkExperience()}
               </Col>
             </Row>
