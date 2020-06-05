@@ -24,6 +24,10 @@ code {
   padding-top: 10px;
 }
 
+.row-spacing {
+  padding-top: 20px;
+}
+
 .home-content {
   /* font-family: 'Times New Roman', Times, serif; */
   display: flex;
