@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import About from './views/About';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <div className="main-content">
+              <div className="home-content">
                 <h1>
                   hi! i'm sahil parikh. i'm currently an engineer at yext.
                 </h1>
