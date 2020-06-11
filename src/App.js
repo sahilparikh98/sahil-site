@@ -4,6 +4,7 @@ import {Navbar, Nav, Container} from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import About from './views/About';
+import Projects from './views/Projects';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route exact path="/about">
               <About />
+            </Route>
+            <Route exact path="/projects">
+              <Projects />
             </Route>
           </Switch>
         </Router>
