@@ -3,6 +3,13 @@ import DocumentTitle from 'react-document-title'
 import {Container, Row} from 'react-bootstrap';
 import Project from '../components/Project'
 
+const projectData = [
+  {
+    name: "bet",
+    git: ""
+  }
+]
+
 export default class Projects extends React.Component {
   createProjects() {
 
