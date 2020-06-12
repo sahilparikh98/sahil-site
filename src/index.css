@@ -59,11 +59,40 @@ code {
   padding-bottom: 15px;
 }
 
-.project-content {
-  height: 120px;
+.icon-resize {
+  height: 80px;
+  width: 80px;
+}
+
+.icon-wrap {
+  text-align: center;
+}
+
+.project-content-description {
+  height: 88px;
+}
+
+.project-content,
+.project-content-title, 
+.project-content-description,
+.project-content-bottom {
+  /* height: 88px; */
   margin-right: 20px;
   margin-left: 10px;
-  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.project-content-title {
+  height: 71px;
+}
+
+.project-content-description {
+  height: 115px;
+  padding-top: 10px;
+}
+
+.project-content-bottom {
+  height: 110px;
 }
 
 .project-box {
@@ -74,6 +103,13 @@ code {
   position: absolute;
   bottom: 0;
   right: 0;
+  text-decoration-line: underline;
+  color: black;
+}
+
+.project-tech {
+  position: absolute;
+  bottom: 0;
 }
 
 .home-content {

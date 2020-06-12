@@ -1,29 +1,44 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Image} from "react-bootstrap";
 
 export default function Project(props) {
   return (
-    <Col sm={true} lg="4" className="col-padding">
+    <Col md={true} lg="4" className="col-padding">
       <div className="rectangle">
-        <Row>
-          <Col className="project-content">
+        <Row className="justify-content-md-center">
+          <Col sm={true} className="project-content-title">
             <div className="project-box">
-              <h3>bet, iOS app</h3>
+              <div className="project-title">
+                <h3>{props.name}, {props.type}</h3>
+              </div>
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col className="project-content">
-            <div className="project-box">
-              <p>bet is an iOS app that allows you to create and 
-                share bets with friends. developed using Swift
-              </p>
+        <Row className="justify-content-md-center">
+          <Col sm={true} className="project-content">
+            <div className="icon-wrap">
+              <Image className="icon-resize" src={props.image}/>
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col className="project-content">
-            <div className="project-link">view on github</div>
+        <Row className="justify-content-md-center">
+          <Col sm={true} className="project-content-description">
+            <div className="project-box">
+              <div className="project-description">
+                <p>{props.description}</p>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+          <Col sm={true} className="project-content-description">
+            <div className="project-tech">
+              <h6>technologies:</h6>
+              <p>{props.tech}</p>
+            </div>
+          </Col>
+          <Col sm={true} className="project-content-description">
+            <a href={props.git} className="project-link">view on github</a>
           </Col>
         </Row>
       </div>
