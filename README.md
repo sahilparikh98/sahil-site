@@ -20,7 +20,7 @@ Great! Here I've detailed the steps I took to develop a website that I wanted.
 
 I actually took the time to develop the design for my site in Figma. Figma is a really great tool that can help you plan out designs, and it's fairly easy to use too. I designed each page of my site using their platform. The design of my site isn't very intense, as you can see, but it was a good opportunity to learn some of the basics of Figma
 
-### Stack
+#### Stack
 
-I decided to leverage the basics on this site in order to learn them well. There are other easier alternatives, like GatsbyJS, which is fantastic at static sites, that I could have picked up, but I wanted to work simply with React and learn how to put a site together with just React.  
+I decided to leverage the basics on this site in order to learn them well. There are other easier alternatives, like GatsbyJS, which is fantastic at static sites, that I could have picked up, but I wanted to work simply with React and learn how to put a site together with just React.    
 I'v also used Bootstrap for most of my layout and the nav-bar. Bootstrap is really nice because it's the industry standard for many current design and layout paradigms, and offers great plug-and-play features. It was really nice to use it for my responsive layouts.
