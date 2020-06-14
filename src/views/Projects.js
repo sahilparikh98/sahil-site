@@ -9,7 +9,7 @@ const projectData = [
     type: "iOS app",
     git: "https://github.com/sahilparikh98/bet",
     description: "bet is an iOS app that allows you to create and share bets with friends. this was the first app i ever made courtesy of my friends at make school",
-    tech: "swift 2, parse (deprecated)"
+    tech: "swift 2, parse"
   },
   {
     name: "dialogue",

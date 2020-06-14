@@ -77,8 +77,6 @@ code {
 .project-content-description,
 .project-content-bottom {
   /* height: 88px; */
-  margin-right: 20px;
-  margin-left: 10px;
   padding-top: 10px;
 }
 
@@ -97,6 +95,8 @@ code {
 
 .project-box {
   padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .project-link {
@@ -105,11 +105,17 @@ code {
   right: 0;
   text-decoration-line: underline;
   color: black;
+  padding-right: 20px;
 }
 
 .project-tech {
   position: absolute;
   bottom: 0;
+  padding-left: 10px;
+}
+
+.project-tech-pill-bottom {
+  margin-bottom: 0px;
 }
 
 .home-content {
