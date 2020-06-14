@@ -14,7 +14,7 @@ export default class Project extends React.Component {
 
   render() {
     return (
-      <Col sm={true} xl="4" className="col-padding" align="center">
+      <Col xl="4" className="col-padding" align="center">
         <div className="rectangle">
           <Row className="justify-content-md-center">
             <Col sm={true} className="project-content-title" align="left">
@@ -37,7 +37,7 @@ export default class Project extends React.Component {
           <Row className="justify-content-md-center">
             <Col sm={true} className="project-content-description" align="left">
               <div className="project-box">
-                <div className="project-codescription">
+                <div className="project-description">
                   <p>{this.props.description}</p>
                 </div>
               </div>
