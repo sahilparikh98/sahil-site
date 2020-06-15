@@ -5,6 +5,8 @@ import DocumentTitle from 'react-document-title';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import About from './views/About';
 import Projects from './views/Projects';
+import Creative from './views/Creative';
+import BlogPost from './views/BlogPost'
 
 function App() {
   return (
@@ -37,6 +39,10 @@ function App() {
             <Route exact path="/projects">
               <Projects />
             </Route>
+            <Route exact path="/creative">
+              <Creative />
+            </Route>
+            <Route exact path="/creative/:blogId" component={BlogPost} />
           </Switch>
         </Router>
       </Container>
