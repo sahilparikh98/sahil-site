@@ -1,14 +1,11 @@
 import React from "react";
-import { Row, Col, Image} from "react-bootstrap";
-import Pill from './Pill'
-
-
+import { Row, Col, Image } from "react-bootstrap";
+import Pill from "./Pill";
 
 export default class Project extends React.Component {
-
   generatePills(technologies) {
     return technologies.map((technology) => {
-       return <Pill>{technology}</Pill>
+      return <Pill>{technology}</Pill>;
     });
   }
 
@@ -17,20 +14,22 @@ export default class Project extends React.Component {
       <Col xl="4" className="col-padding" align="center">
         <div className="rectangle">
           <Row className="justify-content-md-center">
-            <Col sm={true} className="project-content-title" align="left">
+            <Col sm={true} className="project-content" align="left">
+              <div className="project-box">
+                <div className="icon-wrap">
+                  <Image className="icon-resize" src={this.props.image} />
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col sm={true} className="project-content-title" align="center">
               <div className="project-box">
                 <div className="project-title">
                   <h3>
                     {this.props.name}, {this.props.type}
                   </h3>
                 </div>
-              </div>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col sm={true} className="project-content" align="left">
-              <div className="icon-wrap">
-                <Image className="icon-resize" src={this.props.image} />
               </div>
             </Col>
           </Row>

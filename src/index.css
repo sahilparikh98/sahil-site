@@ -26,6 +26,14 @@ code {
   padding-top: 10px;
 }
 
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding-top: 20%;
+}
+
 .row-spacing {
   padding-top: 20px;
 }
@@ -49,14 +57,6 @@ code {
   color: #0e76a8;
 }
 
-.rectangle {
-  width: 350px;
-  height: 102%;
-
-  border: 2px solid #000000;
-  box-sizing: border-box;
-}
-
 .react {
   background: #61DBFB!important;
   color: white;
@@ -76,6 +76,14 @@ code {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcd32",endColorstr="#f5820d",GradientType=1);
 }
 
+.rectangle {
+  width: 330px;
+  height: 102%;
+
+  border: 2px solid #000000;
+  box-sizing: border-box;
+}
+
 .col-padding {
   padding-bottom: 15px;
 }
@@ -87,6 +95,7 @@ code {
 
 .icon-wrap {
   text-align: center;
+  padding-top: 10px;
 }
 
 .project-content-description {
@@ -101,12 +110,12 @@ code {
 }
 
 .project-content-title {
-  height: 71px;
+  height: 50px;
 }
 
 .project-content-description {
   height: 115px;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
 
 .project-content-bottom {
@@ -114,7 +123,7 @@ code {
 }
 
 .project-box {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -142,11 +151,4 @@ code {
   margin-right: 5px;
 }
 
-.home-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-  padding-top: 20%;
-}
 
