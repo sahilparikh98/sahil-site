@@ -2,8 +2,6 @@ import React from "react";
 import DocumentTitle from "react-document-title";
 import { Container, Row, Col } from 'react-bootstrap';
 import Pill from "../components/Pill";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import BlogPost from "./BlogPost";
 
 const blogInfo = [
   {
