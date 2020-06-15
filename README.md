@@ -10,7 +10,7 @@ The main philosophy of this site is to *build from scratch*. So you'll see that 
 
 ### I want to build a website too, but I don't have all of this time
 
-This can be quite the undertaking, especially if you're like me and you're trying to learn. I have always wanted to do this, but I waited for a time period in which I had some uninterruppted time to really focus and motivate myself through the ups and downs of web development. If you want something quickly, some great resources for building your site easily are [beautiful-jekyll](https://github.com/daattali/beautiful-jekyll), which allows you to basically write your whole website in Markdown. Easy! I used this to build my website before this one. Or check out [urspace.io](https://urspace.io), it takes in your resume and builds you a really clean looking, portfolio style site. Both of these are really great options.
+This can be quite the undertaking, especially if you're like me and you're trying to learn. I have always wanted to do this, but I waited for a time period in which I had some uninterrupted time to really focus and motivate myself through the ups and downs of web development. If you want something quickly, some great resources for building your site easily are [beautiful-jekyll](https://github.com/daattali/beautiful-jekyll), which allows you to basically write your whole website in Markdown. Easy! I used this to build my website before this one. Or check out [urspace.io](https://urspace.io), it takes in your resume and builds you a really clean looking, portfolio style site. Both of these are really great options.
 
 ### I have the time
 
