@@ -7,16 +7,8 @@ const blogInfo = [
   {
     id: 1,
     date: "mar 22",
-    title: "title",
-    subtitle: "subtitle",
-    blogPath: "/creative/2/",
-  },
-  {
-    id: 2,
-    date: "jun 06",
-    title: "other title",
-    subtitle: "other subtitle",
-    blogPath: "/creative/2/",
+    title: "can friction in a system ever be useful?",
+    blogPath: "/creative/1/",
   }
 ]
 
@@ -31,11 +23,11 @@ export default class Creative extends React.Component {
         <Row>
           <Col sm={2}>
             <h3>{blog.date}</h3>
+            <h3>2020</h3>
           </Col>
           <Col sm={10}>
-            <a href={blog.blogPath}>
+            <a href={blog.blogPath} className="blog-list-link">
               <h3>{blog.title}</h3>
-              <h4>{blog.subtitle}</h4>
             </a>
             <Pill>tech</Pill>
           </Col>

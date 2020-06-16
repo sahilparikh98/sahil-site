@@ -1,19 +1,19 @@
 import React from 'react';
 import marked from 'marked';
+import { Container, Row, Col } from 'react-bootstrap';
+var fs = require("fs");
 
 const blogInfo = {
-  1: {
-    id: 1,
-    date: "mar 22",
-    title: "title",
-    subtitle: "subtitle",
-    blogPath: "/creative/2/",
-  },
   2: {
     id: 2,
+    date: "mar 22",
+    title: "title",
+    blogPath: "/creative/2/",
+  },
+  1: {
+    id: 1,
     date: "jun 06",
-    title: "other title",
-    subtitle: "other subtitle",
+    title: "can friction in a system ever be useful?",
     blogPath: "/creative/2/",
   }
 };
@@ -27,9 +27,11 @@ export default class BlogPost extends React.Component {
   }
 
   componentDidMount() {
-    const readmePath = require("../posts/1.md");
-    console.log("in component did mount");
-    fetch(readmePath)
+    console.log(typeof(this.props.match.params.blogId))
+    // const blogPath = "../posts/" + this.props.match.params.blogId + ".md";
+    const blogPath = 'https://raw.githubusercontent.com/sahilparikh98/sahil-site/master/src/posts/' + 
+    this.props.match.params.blogId + '.md';
+    fetch(blogPath)
     .then(response => {
       return response.text()
     })
@@ -44,13 +46,21 @@ export default class BlogPost extends React.Component {
     const blog = blogInfo[this.props.match.params.blogId];
     const { markdown } = this.state;
     return (
-      <div>
-        <h3>{blog.title}</h3>
-        <h4>{blog.subtitle}</h4>
-        <section>
-          <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
-        </section>
-      </div>
+      <Container fluid>
+        <Row className="justify-content-md-center">
+          <Col lg="6">
+            <a href="/creative/">⟨ back to writing</a>
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+          <Col lg="6">
+            <h3>{blog.title}</h3>
+            <section>
+              <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
+            </section>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 
