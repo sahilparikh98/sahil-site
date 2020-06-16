@@ -27,8 +27,6 @@ export default class BlogPost extends React.Component {
   }
 
   componentDidMount() {
-    console.log(typeof(this.props.match.params.blogId))
-    // const blogPath = "../posts/" + this.props.match.params.blogId + ".md";
     const blogPath = 'https://raw.githubusercontent.com/sahilparikh98/sahil-site/master/src/posts/' + 
     this.props.match.params.blogId + '.md';
     fetch(blogPath)
@@ -63,8 +61,7 @@ export default class BlogPost extends React.Component {
       </Container>
     );
   }
-
-
+  
   render() {
     return (
       <div>
