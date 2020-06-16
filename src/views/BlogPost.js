@@ -1,4 +1,5 @@
 import React from 'react';
+import marked from 'marked';
 
 const blogInfo = {
   1: {
@@ -19,15 +20,41 @@ const blogInfo = {
 
 export default class BlogPost extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  componentDidMount() {
+    const readmePath = require("../posts/1.md");
+    console.log("in component did mount");
+    fetch(readmePath)
+    .then(response => {
+      return response.text()
+    })
+    .then(text => {
+      this.setState({
+        markdown: marked(text)
+      })
+    })
+  }
+
   generateMarkup() {
     const blog = blogInfo[this.props.match.params.blogId];
+    const { markdown } = this.state;
     return (
       <div>
         <h3>{blog.title}</h3>
         <h4>{blog.subtitle}</h4>
+        <section>
+          <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
+        </section>
       </div>
-    )
+    );
   }
+
+
   render() {
     return (
       <div>
