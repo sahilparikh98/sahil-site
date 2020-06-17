@@ -1,22 +1,6 @@
 import React from 'react';
 import marked from 'marked';
 import { Container, Row, Col } from 'react-bootstrap';
-var fs = require("fs");
-
-const blogInfo = {
-  2: {
-    id: 2,
-    date: "mar 22",
-    title: "title",
-    blogPath: "/creative/2/",
-  },
-  1: {
-    id: 1,
-    date: "jun 06",
-    title: "can friction in a system ever be useful?",
-    blogPath: "/creative/2/",
-  }
-};
 
 export default class BlogPost extends React.Component {
 
@@ -41,7 +25,6 @@ export default class BlogPost extends React.Component {
   }
 
   generateMarkup() {
-    const blog = blogInfo[this.props.match.params.blogId];
     const { markdown } = this.state;
     return (
       <Container fluid>
@@ -52,7 +35,6 @@ export default class BlogPost extends React.Component {
         </Row>
         <Row className="justify-content-md-center">
           <Col lg="6">
-            <h3>{blog.title}</h3>
             <section>
               <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
             </section>
