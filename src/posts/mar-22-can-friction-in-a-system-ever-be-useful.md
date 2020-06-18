@@ -1,4 +1,7 @@
-## Can friction in a system ever be useful?  
+---
+title: Can friction in a system ever be useful?
+something: else
+---
 
 Friction is often an obstacle in computing. It stands in the way of a task or increases its difficulty. Many systems are designed to reduce or eradicate these obstacles. And these systems are right to do so, because the benefits are experienced by many people. However, friction can still be an important component of a system. In the physical sense of friction, a tire without friction also loses its traction, which is a necessary friction required to control a vehicle. This idea of traction can also be applied to computing. **Friction in a digital system can surface information, increase transparency and honesty, and provide clarity**. These characteristics help increase traction and provide guidance for a user of a system, so that they can control the decision they are making.  
 
