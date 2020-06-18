@@ -1,4 +1,3 @@
----
 ## Can friction in a system ever be useful?
 ---
 
