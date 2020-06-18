@@ -7,7 +7,7 @@ import PostInfo from "../posts/PostInfo";
 export default class Creative extends React.Component {
 
   createBlogPath(blog) {
-    const pathStr = "/creative/" + blog.date + "-" + blog.title;
+    const pathStr = "/creative/" + blog.date.slice(0,6) + "-" + blog.title;
     return pathStr.replace(/\s+/g, "-").toLowerCase();
   }
   createBlogList() {
@@ -15,7 +15,7 @@ export default class Creative extends React.Component {
       return (
         <Row>
           <Col sm={2}>
-            <h3>{blog.date}</h3>
+            <h4>{blog.date.slice(0,6)}</h4>
           </Col>
           <Col sm={10}>
             <a href={this.createBlogPath(blog)} className="blog-list-link">

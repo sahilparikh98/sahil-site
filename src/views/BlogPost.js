@@ -18,24 +18,33 @@ export default class BlogPost extends React.Component {
       return response.text()
     })
     .then(text => {
+      const textSplit = text.split('---');
       this.setState({
-        markdown: marked(text)
+        time: textSplit[0].split("  ")[1],
+        title: marked(textSplit[0].split("  ")[0]),
+        markdown: marked(textSplit[1])
       })
     })
   }
 
   generateMarkup() {
-    const { markdown } = this.state;
+    const { markdown, title } = this.state;
     return (
       <Container fluid>
-        <Row className="justify-content-md-center">
-          <Col lg="6">
+        <Row className="justify-content-md-center blog-post-back-link">
+          <Col lg="5">
             <a href="/creative/">⟨ back to writing</a>
           </Col>
         </Row>
         <Row className="justify-content-md-center">
-          <Col lg="6">
+          <Col lg="5">
             <section>
+              <article dangerouslySetInnerHTML={{ __html: title }}></article>
+            </section>
+            <div className="blog-post-info">
+              by Sahil Parikh, {this.state.time} read
+            </div>
+            <section className="blog-post-content">
               <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
             </section>
           </Col>

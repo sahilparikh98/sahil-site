@@ -155,4 +155,19 @@ code {
   color: black;
 }
 
+.blog-post-info {
+  font-size: smaller;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  box-sizing: content-box;
+}
+
+.blog-post-back-link {
+  padding-bottom: 10px;
+}
+
+.blog-post-content {
+  padding-top: 10px;
+}
+
 
