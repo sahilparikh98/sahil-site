@@ -1,13 +1,16 @@
 import React from 'react';
 import marked from 'marked';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import PillBox from '../components/PillBox';
 
 export default class BlogPost extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      loading: true,
+    };
   }
 
   componentDidMount() {
@@ -19,36 +22,67 @@ export default class BlogPost extends React.Component {
     })
     .then(text => {
       const textSplit = text.split('---');
+      const metadata = textSplit[0].split("  ");
       this.setState({
-        time: textSplit[0].split("  ")[1],
-        title: marked(textSplit[0].split("  ")[0]),
-        markdown: marked(textSplit[1])
+        time: metadata[1],
+        pills: metadata[2].split("/"),
+        title: marked(metadata[0]),
+        markdown: marked(textSplit[1]),
+        loading: false
+      }, () => {
+        console.log(this.state.pills);
       })
     })
   }
 
   generateMarkup() {
-    const { markdown, title } = this.state;
+    const { markdown, title, loading } = this.state;
     return (
       <Container fluid>
         <Row className="justify-content-md-center blog-post-back-link">
           <Col lg="5">
-            <a href="/creative/" className="blog-list-link">⟨ back to writing</a>
+            <a href="/creative/" className="blog-list-link">
+              ⟨ back to writing
+            </a>
           </Col>
         </Row>
-        <Row className="justify-content-md-center">
-          <Col lg="5">
-            <section>
-              <article dangerouslySetInnerHTML={{ __html: title }}></article>
-            </section>
-            <div className="blog-post-info">
-              by Sahil Parikh, {this.state.time} read
-            </div>
-            <section className="blog-post-content">
-              <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
-            </section>
-          </Col>
-        </Row>
+        {loading ? (
+          <Row className="justify-content-md-center">
+            <Col lg="5">
+              <Spinner animation="grow" />
+            </Col>
+          </Row>
+        ) : (
+          <Row className="justify-content-md-center">
+            <Col lg="5">
+              <section>
+                <article dangerouslySetInnerHTML={{ __html: title }}></article>
+              </section>
+              <Row className="blog-post-info">
+                <Col>
+                <div className="blog-post-info-metadata">
+                  by Sahil Parikh, {this.state.time} read
+                  </div>
+                </Col>
+                <Col xs="auto">
+                <div className="blog-post-pills" align="right">
+                  <PillBox names={this.state.pills} />
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <div className="blog-post-line"/>
+                </Col>
+              </Row>
+              <section className="blog-post-content">
+                <article
+                  dangerouslySetInnerHTML={{ __html: markdown }}
+                ></article>
+              </section>
+            </Col>
+          </Row>
+        )}
       </Container>
     );
   }

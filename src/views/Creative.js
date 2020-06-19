@@ -1,7 +1,7 @@
 import React from "react";
 import DocumentTitle from "react-document-title";
 import { Container, Row, Col } from 'react-bootstrap';
-import Pill from "../components/Pill";
+import PillBox from "../components/PillBox";
 import PostInfo from "../posts/PostInfo";
 
 export default class Creative extends React.Component {
@@ -21,7 +21,7 @@ export default class Creative extends React.Component {
             <a href={this.createBlogPath(blog)} className="blog-list-link">
               <h3>{blog.title}</h3>
             </a>
-            <Pill>tech</Pill>
+            <PillBox names={blog.tags} />
           </Col>
         </Row>
       )});

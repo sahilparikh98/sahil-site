@@ -154,6 +154,7 @@ code {
 
 .badge {
   margin-right: 5px;
+  vertical-align: text-top!important;
 }
 
 .blog-list-link {
@@ -162,18 +163,25 @@ code {
 }
 
 .blog-post-info {
-  font-size: smaller;
-  padding-bottom: 10px;
-  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.blog-post-line {
+  border: 0.5px solid #000000;
   box-sizing: content-box;
+}
+
+.blog-post-info-metadata {
+  font-size: smaller;
 }
 
 .blog-post-back-link {
   padding-bottom: 10px;
+  
 }
 
 .blog-post-content {
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 
