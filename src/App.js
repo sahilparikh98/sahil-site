@@ -7,6 +7,8 @@ import About from './views/About';
 import Projects from './views/Projects';
 import Creative from './views/Creative';
 import BlogPost from './views/BlogPost'
+import Typist from 'react-typist';
+import Typing from 'react-typing-animation'
 
 function App() {
   return (
@@ -28,9 +30,14 @@ function App() {
           <Switch>
             <Route exact path="/">
               <div className="home-content">
+                <Typing>
                 <h1>
-                  hi! i'm sahil parikh. i'm currently an engineer at yext.
+                    hi! i'm sahil parikh. i'm a software engineer at <a href="https://www.yext.com" className="blog-list-link">yext</a>.
                 </h1>
+                <h1>
+                  i'm currently based in new york city. 🌇
+                </h1>
+                </Typing>
               </div>
             </Route>
             <Route exact path="/about">
