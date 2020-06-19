@@ -1,14 +1,8 @@
 import React from "react";
 import { Row, Col, Image } from "react-bootstrap";
-import Pill from "./Pill";
+import PillBox from "./PillBox";
 
 export default class Project extends React.Component {
-  generatePills(technologies) {
-    return technologies.map((technology) => {
-      return <Pill>{technology}</Pill>;
-    });
-  }
-
   render() {
     return (
       <Col xl="4" className="col-padding" align="center">
@@ -47,7 +41,7 @@ export default class Project extends React.Component {
             <Col className="project-content-description" align="left">
               <div className="project-tech">
                 <h6>technologies:</h6>
-                {this.generatePills(this.props.tech)}
+                <PillBox names={this.props.tech} />
               </div>
             </Col>
             <Col className="project-content-description" align="left">
