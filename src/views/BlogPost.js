@@ -33,7 +33,7 @@ export default class BlogPost extends React.Component {
       <Container fluid>
         <Row className="justify-content-md-center blog-post-back-link">
           <Col lg="5">
-            <a href="/creative/">⟨ back to writing</a>
+            <a href="/creative/" className="blog-list-link">⟨ back to writing</a>
           </Col>
         </Row>
         <Row className="justify-content-md-center">
