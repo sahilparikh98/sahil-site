@@ -25,12 +25,13 @@ export default class Project extends React.Component {
           <Row className="justify-content-md-center">
             <Col sm={true} className="project-content-title" align="center">
               <div className="project-box">
-                <div className="project-title">
-                  <h3>
-                    {this.props.name}, {this.props.type}
+                  <h3 className="title-heading">
+                    {this.props.name}
                   </h3>
+                  <p className="project-type">
+                  {this.props.type}
+                  </p>
                 </div>
-              </div>
             </Col>
           </Row>
           <Row className="justify-content-md-center">
