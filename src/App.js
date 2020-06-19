@@ -7,7 +7,6 @@ import About from './views/About';
 import Projects from './views/Projects';
 import Creative from './views/Creative';
 import BlogPost from './views/BlogPost'
-import Typist from 'react-typist';
 import Typing from 'react-typing-animation'
 
 function App() {
@@ -35,7 +34,7 @@ function App() {
                     hi! i'm sahil parikh. i'm a software engineer at <a href="https://www.yext.com" className="blog-list-link">yext</a>.
                 </h1>
                 <h1>
-                  i'm currently based in new york city. 🌇
+                  i'm currently based in new york city. <span role="img" aria-label="current-time-emoji">🌇</span>
                 </h1>
                 </Typing>
               </div>
