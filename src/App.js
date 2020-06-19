@@ -29,7 +29,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               <div className="home-content">
-                <Typing>
+                <Typing speed={30}>
                 <h1>
                     hi! i'm sahil parikh. i'm a software engineer at <a href="https://www.yext.com" className="blog-list-link">yext</a>.
                 </h1>
