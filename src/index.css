@@ -30,6 +30,10 @@ code {
   text-align: left;
 }
 
+.creative-page-header {
+  margin-bottom: 20px;
+}
+
 .home-content {
   display: flex;
   justify-content: center;

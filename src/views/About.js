@@ -51,7 +51,7 @@ export default class About extends React.Component {
         <Container>
           <div className="main-content">
             <Row>
-              <Col sm={5}>
+              <Col sm={5} className="col-padding">
                 <h3>about me:</h3>
                 <p className="row-spacing">
                   I recently graduated from The University of Texas at Austin

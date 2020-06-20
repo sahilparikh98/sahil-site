@@ -101,7 +101,7 @@ export default class Projects extends React.Component {
             <Row lg="2" md="2">
               <Col xl="4" align="center">
                 <div className="page-header-padding">
-                  <h3>projects</h3>
+                  <h2>projects</h2>
                 </div>
               </Col>
             </Row>
