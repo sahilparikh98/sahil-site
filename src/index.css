@@ -5,8 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: scroll;
-  overflow-y: scroll;
 }
 
 code {
@@ -24,6 +22,12 @@ code {
 
 .main-content {
   padding-top: 10px;
+}
+
+.page-header-padding {
+  padding-bottom: 10px;
+  width: 315px;
+  text-align: left;
 }
 
 .home-content {
@@ -77,7 +81,7 @@ code {
 }
 
 .rectangle {
-  width: 330px;
+  width: 315px;
   height: 102%;
 
   border: 2px solid #000000;

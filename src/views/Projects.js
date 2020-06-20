@@ -1,6 +1,6 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title'
-import {Container, Row} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import Project from '../components/Project'
 
 const projectData = [
@@ -98,6 +98,13 @@ export default class Projects extends React.Component {
       <DocumentTitle title="sahil parikh - projects">
         <Container fluid="lg">
           <div className="main-content">
+            <Row lg="2" md="2">
+              <Col xl="4" align="center">
+                <div className="page-header-padding">
+                  <h3>projects</h3>
+                </div>
+              </Col>
+            </Row>
             <Row className="justify-content-md-center" lg="2" md="2">
               {this.createProjects()}
             </Row>

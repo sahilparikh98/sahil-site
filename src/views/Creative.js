@@ -31,6 +31,9 @@ export default class Creative extends React.Component {
     return (
       <DocumentTitle title="sahil parikh - creative">
         <Container>
+        <p>Here you can find some of the stuff I've written. You can also check out some of my posts
+                  on <a href="https://medium.com/@sparikh98/">Medium.</a>
+                </p>
             {this.createBlogList()}
         </Container>
       </DocumentTitle>
