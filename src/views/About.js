@@ -32,6 +32,13 @@ const jobs = [
   }
 ]
 
+const socials = {
+  twitter: "https://twitter.com/sahilparikh98",
+  instagram: "https://instagram.com/sahilparikh98",
+  linkedin: "https://linkedin.com/sparikh98",
+  github: "https://github.com/sahilparikh98"
+}
+
 export default class About extends React.Component {
 
   createWorkExperience() {
@@ -68,9 +75,7 @@ export default class About extends React.Component {
                   fun email buddy. Or find me on any of the social networks.
                 </p>
                 <SocialMedia
-                  twitter="https://twitter.com/sahilparikh98"
-                  instagram="https://instagram.com/sahilparikh98"
-                  linkedin="https://linkedin.com/sparikh98"
+                  socials={socials}
                 />
               </Col>
               <Col sm={7}>
