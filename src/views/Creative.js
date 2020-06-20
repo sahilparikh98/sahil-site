@@ -36,7 +36,7 @@ export default class Creative extends React.Component {
             <p>
               here you can find some of the stuff i've written. you can also
               check out some of my posts on{" "}
-              <a href="https://medium.com/@sparikh98/">medium.</a>
+              <a href="https://medium.com/@sparikh98/" className="blog-list-link">medium.</a>
             </p>
           </div>
           {this.createBlogList()}
