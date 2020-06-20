@@ -59,7 +59,7 @@ export default class About extends React.Component {
           <div className="main-content">
             <Row>
               <Col sm={5} className="col-padding">
-                <h3>about me:</h3>
+                <h3>about me</h3>
                 <p className="row-spacing">
                   I recently graduated from The University of Texas at Austin
                   with a degree in computer science and a minor in business. I’m
@@ -79,7 +79,7 @@ export default class About extends React.Component {
                 />
               </Col>
               <Col sm={7}>
-                <h3>work:</h3>
+                <h3>work</h3>
                 {this.createWorkExperience()}
               </Col>
             </Row>
