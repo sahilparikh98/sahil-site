@@ -40,13 +40,13 @@ export default class Project extends React.Component {
           <Row className="justify-content-md-center">
             <Col className="project-content-description" align="left">
               <div className="project-tech">
-                <h6>technologies:</h6>
+                <h6>built with:</h6>
                 <PillBox names={this.props.tech} />
               </div>
             </Col>
             <Col className="project-content-description" align="left">
               <a href={this.props.git} className="project-link">
-                view on github
+                view the code
               </a>
             </Col>
           </Row>
