@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlockPicker } from 'react-color';
+import { TwitterPicker } from 'react-color';
 import reactCSS from 'reactcss';
 
 export default class ColorWrapper extends React.Component {
@@ -9,10 +9,10 @@ export default class ColorWrapper extends React.Component {
     this.state = {
       displayColorPicker: false,
       color: {
-        r: '241',
-        g: '112',
-        b: '19',
-        a: '1',
+        r: '0',
+        g: '0',
+        b: '0',
+        a: '0',
       },
     };
   }
@@ -30,7 +30,9 @@ export default class ColorWrapper extends React.Component {
   };
 
   handleChangeComplete = (color, event) => {
-    this.setState({ color: color.rgb });
+    this.setState({ color: color.rgb, displayColorPicker: !this.state.displayColorPicker }, () => {
+      document.body.style.backgroundColor = `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`;
+    });
   };
 
   shouldComponentUpdate(nextState) {
@@ -38,23 +40,22 @@ export default class ColorWrapper extends React.Component {
   }
 
   render() {
-    console.log("rerender")
     const styles = reactCSS({
       'default': {
-        color: {
-          minHeight: "100vh",
-          backgroundColor: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+        height: {
+          minHeight: "95vh",
         },
         swatch: {
-          padding: '5px',
-          background: '#fff',
-          borderRadius: '1px',
-          boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
-          display: 'inline-block',
+          paddingRight: '20px',
+          border: 'none',
+          background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+          textDecoration: 'underline',
           cursor: 'pointer',
         },
+        bottom: {
+          fontSize: '20px'
+        },
         popover: {
-          position: 'absolute',
           zIndex: '2',
         },
         cover: {
@@ -67,13 +68,18 @@ export default class ColorWrapper extends React.Component {
       },
     });
     return (
-    <div style={styles.color}>
-      {this.props.children}
-      <button style={ styles.swatch } onClick={ this.handleClick }>color</button>
-      { this.state.displayColorPicker ? <div style={ styles.popover }>
-          <div style={ styles.cover } onClick={ this.handleClose }/>
-          <BlockPicker color={ this.state.color } onChange={ this.handleChange } onChangeComplete={this.handleChangeComplete}/>
-        </div> : null }
-    </div>);
+    <div>
+      <div style={styles.height}>
+        {this.props.children}
+      </div>
+      <div style={styles.bottom}>
+        { this.state.displayColorPicker ? <div style={ styles.popover }>
+            <div onClick={ this.handleClose }/>
+            <TwitterPicker color={ this.state.color } onChange={ this.handleChange } onChangeComplete={this.handleChangeComplete}/>
+          </div> : null }
+          <button style={ styles.swatch } onClick={ this.handleClick }>change background color</button>
+        </div>
+    </div>
+    );
   }
-} 
+}
