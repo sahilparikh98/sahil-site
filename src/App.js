@@ -9,6 +9,7 @@ import Projects from "./views/Projects";
 import Creative from "./views/Creative";
 import BlogPost from "./views/BlogPost";
 import Typing from "react-typing-animation";
+import ColorWrapper from './components/ColorWrapper';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <DocumentTitle title="sahil parikh">
+        <ColorWrapper>
         <Container fluid>
           <Router>
             <Navbar bg="clear" expand="lg">
@@ -76,6 +78,8 @@ class App extends React.Component {
             </Switch>
           </Router>
         </Container>
+        </ColorWrapper>
+        
       </DocumentTitle>
     );
   }
