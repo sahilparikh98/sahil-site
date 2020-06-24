@@ -1,6 +1,7 @@
 import React from 'react';
 import marked from 'marked';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import PillBox from '../components/PillBox';
 
 export default class BlogPost extends React.Component {
@@ -41,9 +42,11 @@ export default class BlogPost extends React.Component {
       <Container fluid>
         <Row className="justify-content-md-center blog-post-back-link">
           <Col lg="5">
+            <LinkContainer to="/creative">
             <a href="/creative/" className="blog-list-link">
               ⟨ back to writing
             </a>
+            </LinkContainer>
           </Col>
         </Row>
         {loading ? (
