@@ -11,8 +11,58 @@ import BlogPost from "./views/BlogPost";
 import Typing from "react-typing-animation";
 import ColorWrapper from "./components/ColorWrapper";
 
+const NYC_OFFSET = -4;
+
 class App extends React.Component {
+  
+  calcTime = () => {
+    const d = new Date();
+    const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    const nd = new Date(utc + (3600000*NYC_OFFSET));
+    return nd.getHours();
+  }
+
+  getEmoji = () => {
+    const hour = this.calcTime();
+    if(hour >= 20 || hour < 6) {
+      return (
+        <span role="img" aria-label="current-time-emoji">
+          🌃
+        </span>
+      );
+    }
+    if(hour >= 6 && hour <= 11) {
+      return (
+        <span role="img" aria-label="current-time-emoji">
+          🌆
+        </span>
+      );
+    }
+    if(hour >= 12 && hour <= 18) {
+      return (
+        <span role="img" aria-label="current-time-emoji">
+          🏙
+        </span>
+      );
+    }
+    if(hour >= 18 && hour <= 19) {
+      return (
+        <span role="img" aria-label="current-time-emoji">
+          🌇
+        </span>
+      );
+    }
+    if(hour >= 18 && hour <= 19) {
+      return (
+        <span role="img" aria-label="current-time-emoji">
+          🌃
+        </span>
+      );
+    }
+  }
+
   render() {
+    const emoji = this.getEmoji();
     return (
       <DocumentTitle title="sahil parikh">
         <ColorWrapper>
@@ -71,12 +121,7 @@ class App extends React.Component {
                         </a>
                         .
                       </h1>
-                      <h1>
-                        i'm currently based in new york city.{" "}
-                        <span role="img" aria-label="current-time-emoji">
-                          🌇
-                        </span>
-                      </h1>
+                      <h1>i'm currently based in new york city. {emoji}</h1>
                     </Typing>
                   </div>
                 </Route>
