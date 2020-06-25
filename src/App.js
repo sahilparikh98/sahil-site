@@ -14,7 +14,7 @@ import ColorWrapper from "./components/ColorWrapper";
 const NYC_OFFSET = -4;
 
 class App extends React.Component {
-  
+
   calcTime = () => {
     const d = new Date();
     const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
@@ -110,7 +110,7 @@ class App extends React.Component {
               <Switch>
                 <Route exact path="/">
                   <div className="home-content">
-                    <Typing speed={40}>
+                    <Typing speed={40} cursorClassName="typing-animation-cursor">
                       <h1>
                         hi! i'm sahil parikh. i'm a software engineer at{" "}
                         <a
