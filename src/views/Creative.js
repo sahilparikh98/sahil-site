@@ -1,16 +1,16 @@
 import React from "react";
 import DocumentTitle from "react-document-title";
 import { Container, Row, Col } from "react-bootstrap";
-import { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
 import PillBox from "../components/PillBox";
 import PostInfo from "../posts/PostInfo";
 
 export default class Creative extends React.Component {
-  createBlogPath(blog) {
+  createBlogPath = (blog) => {
     const pathStr = "/creative/" + blog.date.slice(0, 6) + "-" + blog.title;
     return pathStr.replace(/\s+/g, "-").toLowerCase();
   }
-  createBlogList() {
+  createBlogList = () => {
     return PostInfo.info.map((blog) => {
       return (
         <Row>
@@ -19,9 +19,9 @@ export default class Creative extends React.Component {
           </Col>
           <Col sm={10}>
             <LinkContainer to={this.createBlogPath(blog)}>
-            <a href={this.createBlogPath(blog)} className="blog-list-link">
-              <h3>{blog.title}</h3>
-            </a>
+              <a href={this.createBlogPath(blog)} className="blog-list-link">
+                <h3>{blog.title}</h3>
+              </a>
             </LinkContainer>
             <PillBox names={blog.tags} />
           </Col>
@@ -39,7 +39,12 @@ export default class Creative extends React.Component {
             <p>
               here you can find some of the stuff i've written. you can also
               check out some of my posts on{" "}
-              <a href="https://medium.com/@sparikh98/" className="blog-list-link">medium.</a>
+              <a
+                href="https://medium.com/@sparikh98/"
+                className="blog-list-link"
+              >
+                medium.
+              </a>
             </p>
           </div>
           {this.createBlogList()}

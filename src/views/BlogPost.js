@@ -1,11 +1,10 @@
-import React from 'react';
-import marked from 'marked';
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import PillBox from '../components/PillBox';
+import React from "react";
+import marked from "marked";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import PillBox from "../components/PillBox";
 
 export default class BlogPost extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -15,37 +14,42 @@ export default class BlogPost extends React.Component {
   }
 
   componentDidMount() {
-    const blogPath = 'https://raw.githubusercontent.com/sahilparikh98/sahil-site/master/src/posts/' + 
-    this.props.match.params.blogId + '.md';
+    const blogPath =
+      "https://raw.githubusercontent.com/sahilparikh98/sahil-site/master/src/posts/" +
+      this.props.match.params.blogId +
+      ".md";
     fetch(blogPath)
-    .then(response => {
-      return response.text()
-    })
-    .then(text => {
-      const textSplit = text.split('---');
-      const metadata = textSplit[0].split("  ");
-      this.setState({
-        time: metadata[1],
-        pills: metadata[2].split("/"),
-        title: marked(metadata[0]),
-        markdown: marked(textSplit[1]),
-        loading: false
-      }, () => {
-        console.log(this.state.pills);
+      .then((response) => {
+        return response.text();
       })
-    })
+      .then((text) => {
+        const textSplit = text.split("---");
+        const metadata = textSplit[0].split("  ");
+        this.setState(
+          {
+            time: metadata[1],
+            pills: metadata[2].split("/"),
+            title: marked(metadata[0]),
+            markdown: marked(textSplit[1]),
+            loading: false,
+          },
+          () => {
+            console.log(this.state.pills);
+          }
+        );
+      });
   }
 
-  generateMarkup() {
+  generateMarkup = () => {
     const { markdown, title, loading } = this.state;
     return (
       <Container fluid>
         <Row className="justify-content-md-center blog-post-back-link">
           <Col lg="5">
             <LinkContainer to="/creative">
-            <a href="/creative/" className="blog-list-link">
-              ⟨ back to writing
-            </a>
+              <a href="/creative/" className="blog-list-link">
+                ⟨ back to writing
+              </a>
             </LinkContainer>
           </Col>
         </Row>
@@ -63,19 +67,19 @@ export default class BlogPost extends React.Component {
               </section>
               <Row className="blog-post-info">
                 <Col>
-                <div className="blog-post-info-metadata">
-                  by Sahil Parikh, {this.state.time} read
+                  <div className="blog-post-info-metadata">
+                    by Sahil Parikh, {this.state.time} read
                   </div>
                 </Col>
                 <Col xs="auto">
-                <div className="blog-post-pills" align="right">
-                  <PillBox names={this.state.pills} />
+                  <div className="blog-post-pills" align="right">
+                    <PillBox names={this.state.pills} />
                   </div>
                 </Col>
               </Row>
               <Row>
                 <Col>
-                  <div className="blog-post-line"/>
+                  <div className="blog-post-line" />
                 </Col>
               </Row>
               <section className="blog-post-content">
@@ -89,12 +93,8 @@ export default class BlogPost extends React.Component {
       </Container>
     );
   }
-  
+
   render() {
-    return (
-      <div>
-        {this.generateMarkup()}
-      </div>
-    );
+    return <div>{this.generateMarkup()}</div>;
   }
 }

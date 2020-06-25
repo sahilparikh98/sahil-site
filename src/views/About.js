@@ -1,55 +1,55 @@
-import React from 'react';
-import DocumentTitle from 'react-document-title';
-import {Container, Row, Col} from 'react-bootstrap';
-import WorkExperience from '../components/WorkExperience';
-import SocialMedia from '../components/SocialMedia';
+import React from "react";
+import DocumentTitle from "react-document-title";
+import { Container, Row, Col } from "react-bootstrap";
+import WorkExperience from "../components/WorkExperience";
+import SocialMedia from "../components/SocialMedia";
 
 const jobs = [
   {
     company: "yext",
     position: "software engineer",
     team: "yext answers",
-    year: "august 2020 - present"
-    
+    year: "august 2020 - present",
   },
   {
     company: "yext",
     position: "software engineering intern",
     team: "ux engineering",
-    year: "summer 2019"
+    year: "summer 2019",
   },
   {
     company: "j.p. morgan chase",
     position: "software engineering intern",
     team: "process automation",
-    year: "summer 2018"
+    year: "summer 2018",
   },
   {
     company: "cox automotive",
     position: "software engineering intern",
     team: "front-end features and tooling",
-    year: "summer 2017"
-  }
-]
+    year: "summer 2017",
+  },
+];
 
 const socials = {
   twitter: "https://twitter.com/sahilparikh98",
   instagram: "https://instagram.com/sahilparikh98",
   linkedin: "https://linkedin.com/sparikh98",
-  github: "https://github.com/sahilparikh98"
-}
+  github: "https://github.com/sahilparikh98",
+};
 
 export default class About extends React.Component {
-
   createWorkExperience() {
     return jobs.map((job) => {
-      return <WorkExperience 
-                company={job.company}
-                position={job.position}
-                team={job.team}
-                year={job.year}
-              />
-    })
+      return (
+        <WorkExperience
+          company={job.company}
+          position={job.position}
+          team={job.team}
+          year={job.year}
+        />
+      );
+    });
   }
 
   render() {
@@ -74,9 +74,7 @@ export default class About extends React.Component {
                   these, or none of these, I promise you that I can be a very
                   fun email buddy. Or find me on any of the social networks.
                 </p>
-                <SocialMedia
-                  socials={socials}
-                />
+                <SocialMedia socials={socials} />
               </Col>
               <Col sm={7}>
                 <h3>work</h3>
