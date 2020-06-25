@@ -61,18 +61,18 @@ export default class About extends React.Component {
               <Col sm={5} className="col-padding">
                 <h3>about me</h3>
                 <p className="row-spacing">
-                  I recently graduated from The University of Texas at Austin
-                  with a degree in computer science and a minor in business. I’m
-                  a builder by nature, and I love working on products that don’t
-                  stop at just solving a problem, but inducing delight. My
+                  i recently graduated from the university of texas at austin
+                  with a degree in computer science and a minor in business. i’m
+                  a builder by nature and choice, and i love working on products that don’t
+                  stop at just solving a problem, but inducing delight. my
                   technical interests lie in whatever people interact with, but
                   mainly front-end development and iOS app development.
                 </p>
                 <p>
-                  My non-technical interests mostly take up in writing, comedy,
-                  cooking and coffee. Email me if you want to talk about any of
-                  these, or none of these, I promise you that I can be a very
-                  fun email buddy. Or find me on any of the social networks.
+                  my non-technical interests mostly take up in writing, comedy,
+                  cooking and coffee. email me if you want to talk about any of
+                  these, or none of these, i promise you that i can be a very
+                  fun email buddy. or find me on any of the social networks.
                 </p>
                 <SocialMedia socials={socials} />
               </Col>
