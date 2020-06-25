@@ -32,10 +32,7 @@ export default class BlogPost extends React.Component {
             title: marked(metadata[0]),
             markdown: marked(textSplit[1]),
             loading: false,
-          },
-          () => {
-            console.log(this.state.pills);
-          }
+          },  
         );
       });
   }
