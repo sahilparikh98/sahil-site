@@ -12,12 +12,19 @@ code {
     monospace;
 }
 
-/* .navbar-brand, .nav-link {
-  font-family: 'Times New Roman', Times, serif;
-} */
+
+.nav-link-active-color {
+  color: inherit!important;
+  text-decoration: underline;
+}
+
+.nav-brand-active-color {
+  color: inherit!important;
+}
+
 
 .navbar-light .navbar-collapse .navbar-nav .nav-link {
-  color: black;
+  color: inherit;
 }
 
 .main-content {
@@ -58,20 +65,20 @@ code {
 }
 
 .twitter {
-  color: #1DA1F2;
+  color: #1DA1F2!important;
 }
 
 .linkedin {
-  color: #0e76a8;
+  color: #0e76a8!important;
 }
 
 .react {
   background: #61DBFB!important;
-  color: white;
+  color: white!important;
 }
 
 .github {
-  color: black;
+  color: inherit;
 }
 
 .social-media-link {
@@ -80,16 +87,16 @@ code {
 }
 
 .swift {
-  background: rgb(252,84,49);
-  background: linear-gradient(90deg, rgba(252,84,49,1) 20%, rgba(252,141,65,1) 100%);
-  color: white;
+  background: rgb(252,84,49)!important;
+  background: linear-gradient(90deg, rgba(252,84,49,1) 20%, rgba(252,141,65,1) 100%)!important;
+  color: white!important;
 }
 
 .firebase {
-  background: rgb(255,205,50);
-  background: -moz-linear-gradient(90deg, rgba(255,205,50,1) 20%, rgba(245,130,13,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(255,205,50,1) 20%, rgba(245,130,13,1) 100%);
-  background: linear-gradient(90deg, rgba(255,205,50,1) 20%, rgba(245,130,13,1) 100%);
+  background: rgb(255,205,50)!important;
+  background: -moz-linear-gradient(90deg, rgba(255,205,50,1) 20%, rgba(245,130,13,1) 100%)!important;
+  background: -webkit-linear-gradient(90deg, rgba(255,205,50,1) 20%, rgba(245,130,13,1) 100%)!important;
+  background: linear-gradient(90deg, rgba(255,205,50,1) 20%, rgba(245,130,13,1) 100%)!important;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcd32",endColorstr="#f5820d",GradientType=1);
 }
 
@@ -97,7 +104,7 @@ code {
   width: 315px;
   height: 102%;
 
-  border: 2px solid #000000;
+  border: 2px solid;
   box-sizing: border-box;
 }
 
@@ -155,7 +162,7 @@ code {
   bottom: 0;
   right: 0;
   text-decoration-line: underline;
-  color: black;
+  color: inherit;
   padding-right: 20px;
 }
 
@@ -175,7 +182,7 @@ code {
 }
 
 .blog-list-link {
-  color: black;
+  color: inherit;
   text-decoration: underline;
 }
 
@@ -184,7 +191,7 @@ code {
 }
 
 .blog-post-line {
-  border: 0.5px solid #000000;
+  border: 0.5px solid;
   box-sizing: content-box;
 }
 
