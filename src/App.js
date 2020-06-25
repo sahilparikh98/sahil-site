@@ -12,11 +12,6 @@ import Typing from "react-typing-animation";
 import ColorWrapper from "./components/ColorWrapper";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log("app constructed");
-  }
-
   render() {
     return (
       <DocumentTitle title="sahil parikh">
