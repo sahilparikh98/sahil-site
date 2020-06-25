@@ -28,11 +28,13 @@ export default class ColorWrapper extends React.Component {
 
     const d = new Date();
     const hour = d.getHours();
-    const autoDarkTheme = (hour >= 20 || hour < 6);
+    const autoDarkTheme = hour >= 20 || hour < 6;
 
     this.state = {
       color: autoDarkTheme ? defaultColors.black.rgb : defaultColors.white.rgb,
-      textColor: autoDarkTheme ? defaultColors.white.rgb : defaultColors.black.rgb,
+      textColor: autoDarkTheme
+        ? defaultColors.white.rgb
+        : defaultColors.black.rgb,
       darkTheme: autoDarkTheme,
     };
     document.body.style.backgroundColor = `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`;
@@ -77,7 +79,7 @@ export default class ColorWrapper extends React.Component {
     this.handleChangeComplete(defaultColors.white);
     this.handleTextColorChangeComplete(defaultColors.black);
     this.setState({ darkTheme: false });
-  }
+  };
 
   render() {
     const styles = reactCSS({
@@ -141,20 +143,23 @@ export default class ColorWrapper extends React.Component {
               dark theme
             </Button>
           )}
-          <Button style={styles.clearButton} onClick={this.handleResetClick}>reset</Button>
+          <Button style={styles.clearButton} onClick={this.handleResetClick}>
+            reset
+          </Button>
         </Popover.Content>
       </Popover>
     );
     return (
       <div>
-        <div style={styles.height}>
-          {this.props.children}
-        </div>
+        <div style={styles.height}>{this.props.children}</div>
         <div style={styles.bottom}>
-          <OverlayTrigger trigger={["focus", "click"]} placement="top" overlay={Pop} rootClose>
-            <button style={styles.swatch}>
-              change colors
-            </button>
+          <OverlayTrigger
+            trigger={["focus", "click"]}
+            placement="top"
+            overlay={Pop}
+            rootClose
+          >
+            <button style={styles.swatch}>change colors</button>
           </OverlayTrigger>
         </div>
       </div>
