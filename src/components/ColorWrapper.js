@@ -77,6 +77,12 @@ export default class ColorWrapper extends React.Component {
     this.setState({ darkTheme: !this.state.darkTheme });
   };
 
+  handleResetClick = () => {
+    this.handleChangeComplete(defaultColors.white);
+    this.handleTextColorChangeComplete(defaultColors.black);
+    this.setState({ darkTheme: false });
+  }
+
   render() {
     const styles = reactCSS({
       default: {
@@ -139,6 +145,7 @@ export default class ColorWrapper extends React.Component {
               dark theme
             </Button>
           )}
+          <Button style={styles.clearButton} onClick={this.handleResetClick}>reset</Button>
         </Popover.Content>
       </Popover>
     );
