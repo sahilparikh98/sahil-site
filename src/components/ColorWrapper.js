@@ -2,6 +2,7 @@ import React from "react";
 import { CirclePicker } from "react-color";
 import { Popover, OverlayTrigger, Button } from "react-bootstrap";
 import reactCSS from "reactcss";
+import { ThemeConsumer } from "styled-components";
 
 const defaultColors = {
   black: {
@@ -44,8 +45,20 @@ export default class ColorWrapper extends React.Component {
   }
 
   handleClick = () => {
+    if (!this.state.displayColorPicker) {
+      document.addEventListener('click', this.handleOutsideClick, false);
+    } else {
+      document.removeEventListener('click', this.handleOutsideClick, false);
+    }
     this.setState({ displayColorPicker: !this.state.displayColorPicker });
   };
+
+  handleOutsideClick = (e) => {
+    if (this.node.contains(e.target)) {
+      return;
+    }
+    this.handleClick();
+  }
 
   handleClose = () => {
     this.setState({ displayColorPicker: false });
@@ -97,6 +110,7 @@ export default class ColorWrapper extends React.Component {
           minHeight: "95vh",
           color: `rgba(${this.state.textColor.r}, ${this.state.textColor.g}, ${this.state.textColor.b}, ${this.state.textColor.a})`,
           borderColor: `rgba(${this.state.textColor.r}, ${this.state.textColor.g}, ${this.state.textColor.b}, ${this.state.textColor.a})`,
+          backgroundColor: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
         },
         swatch: {
           paddingRight: "20px",
@@ -127,7 +141,7 @@ export default class ColorWrapper extends React.Component {
       },
     });
     const Pop = (
-      <Popover id="popover-basic">
+      <Popover id="popover-basic" ref={node => {this.node = node;}}>
         <Popover.Content>
           <h6>change background color:</h6>
           <CirclePicker
@@ -161,14 +175,15 @@ export default class ColorWrapper extends React.Component {
         </Popover.Content>
       </Popover>
     );
+    this.node = Pop;
     return (
       <div>
         <div style={styles.height} onClick={this.handleClose}>
           {this.props.children}
         </div>
         <div style={styles.bottom}>
-          <OverlayTrigger trigger="click" placement="top" overlay={Pop}>
-            <button style={styles.swatch} onClick={this.handleClick}>
+          <OverlayTrigger trigger={["focus", "click"]} placement="top" overlay={Pop} onBlur={this.handleClick}>
+            <button style={styles.swatch} onClick={this.handleClick} onBlur={this.handleClick}>
               change colors
             </button>
           </OverlayTrigger>
