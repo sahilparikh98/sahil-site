@@ -25,21 +25,17 @@ const defaultColors = {
 export default class ColorWrapper extends React.Component {
   constructor(props) {
     super(props);
+
+    const d = new Date();
+    const hour = d.getHours();
+    const autoDarkTheme = (hour >= 20 || hour < 6);
+
     this.state = {
-      color: {
-        r: "0",
-        g: "0",
-        b: "0",
-        a: "0",
-      },
-      textColor: {
-        r: "0",
-        g: "0",
-        b: "0",
-        a: "100",
-      },
-      darkTheme: false,
+      color: autoDarkTheme ? defaultColors.black.rgb : defaultColors.white.rgb,
+      textColor: autoDarkTheme ? defaultColors.white.rgb : defaultColors.black.rgb,
+      darkTheme: autoDarkTheme,
     };
+    document.body.style.backgroundColor = `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`;
   }
 
   handleChange = (color) => {
