@@ -32,7 +32,7 @@ const projectData = [
 
 export default class Projects extends React.Component {
   generateImagePath = (key) => {
-    return "./img/" + key + ".png";
+    return "../img/" + key + ".png";
   }
 
   createProjects = () => {
