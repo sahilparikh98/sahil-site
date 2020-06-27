@@ -3,6 +3,7 @@ import marked from "marked";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import PillBox from "../components/PillBox";
+import DocumentTitle from "react-document-title";
 
 export default class BlogPost extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class BlogPost extends React.Component {
           {
             time: metadata[1],
             pills: metadata[2].split("/"),
-            title: marked(metadata[0]),
+            title: metadata[0],
             markdown: marked(textSplit[1]),
             loading: false,
           },  
@@ -37,57 +38,63 @@ export default class BlogPost extends React.Component {
       });
   }
 
+  buildTitle = (titleFromMd) => {
+    return "sahil parikh - " + String(titleFromMd).slice(3);
+  }
+
   generateMarkup = () => {
     const { markdown, title, loading } = this.state;
     return (
-      <Container fluid>
-        <Row className="justify-content-md-center blog-post-back-link">
-          <Col lg="5">
-            <LinkContainer to="/creative">
-              <a href="/creative/" className="blog-list-link">
-                ⟨ back to writing
-              </a>
-            </LinkContainer>
-          </Col>
-        </Row>
-        {loading ? (
-          <Row className="justify-content-md-center">
+      <DocumentTitle title={this.buildTitle(title)}>
+        <Container fluid>
+          <Row className="justify-content-md-center blog-post-back-link">
             <Col lg="5">
-              <Spinner animation="grow" />
+              <LinkContainer to="/creative">
+                <a href="/creative/" className="blog-list-link">
+                  ⟨ back to writing
+                </a>
+              </LinkContainer>
             </Col>
           </Row>
-        ) : (
-          <Row className="justify-content-md-center">
-            <Col lg="5">
-              <section>
-                <article dangerouslySetInnerHTML={{ __html: title }}></article>
-              </section>
-              <Row className="blog-post-info">
-                <Col>
-                  <div className="blog-post-info-metadata">
-                    by Sahil Parikh, {this.state.time} read
-                  </div>
-                </Col>
-                <Col xs="auto">
-                  <div className="blog-post-pills" align="right">
-                    <PillBox names={this.state.pills} />
-                  </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <div className="blog-post-line" />
-                </Col>
-              </Row>
-              <section className="blog-post-content">
-                <article
-                  dangerouslySetInnerHTML={{ __html: markdown }}
-                ></article>
-              </section>
-            </Col>
-          </Row>
-        )}
-      </Container>
+          {loading ? (
+            <Row className="justify-content-md-center">
+              <Col lg="5">
+                <Spinner animation="grow" />
+              </Col>
+            </Row>
+          ) : (
+            <Row className="justify-content-md-center">
+              <Col lg="5">
+                <section>
+                  <article dangerouslySetInnerHTML={{ __html: marked(title) }}></article>
+                </section>
+                <Row className="blog-post-info">
+                  <Col>
+                    <div className="blog-post-info-metadata">
+                      by Sahil Parikh, {this.state.time} read
+                    </div>
+                  </Col>
+                  <Col xs="auto">
+                    <div className="blog-post-pills" align="right">
+                      <PillBox names={this.state.pills} />
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <div className="blog-post-line" />
+                  </Col>
+                </Row>
+                <section className="blog-post-content">
+                  <article
+                    dangerouslySetInnerHTML={{ __html: markdown }}
+                  ></article>
+                </section>
+              </Col>
+            </Row>
+          )}
+        </Container>
+      </DocumentTitle>
     );
   }
 
