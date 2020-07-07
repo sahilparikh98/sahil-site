@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## sahil-site
 
-This is my personal website. It's quite basic, written in ReactJS and Bootstrap 4. I do have plans to migrate to Typescript later. 
+This is my personal website, which you can view at [sparikh.io](https://sparikh.io). It's quite basic, written in ReactJS and Bootstrap 4. I do have plans to migrate to Typescript later. 
 Occasionally, I will test out ideas and components in this web app, so it may be a perpetual work in progress. See the [issues](https://github.com/sahilparikh98/sahil-site/issues) tab for what I'm working on.
 I would also love some design suggestions or bugs you find on the site. It's really just a practice ground for my skills in web development.
 
