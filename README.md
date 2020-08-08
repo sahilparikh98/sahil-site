@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## sahil-site
 
-This is my personal website. It's quite basic, written in ReactJS and Bootstrap 4. I do have plans to migrate to Typescript later. 
+This is my personal website, which you can view at [sparikh.io](https://sparikh.io). It's quite basic, written in ReactJS and Bootstrap 4. I do have plans to migrate to Typescript later. 
 Occasionally, I will test out ideas and components in this web app, so it may be a perpetual work in progress. See the [issues](https://github.com/sahilparikh98/sahil-site/issues) tab for what I'm working on.
 I would also love some design suggestions or bugs you find on the site. It's really just a practice ground for my skills in web development.
 
@@ -24,7 +24,11 @@ I actually took the time to develop the design for my site in Figma. Figma is a 
 
 I decided to leverage the basics on this site in order to learn them well. There are other easier alternatives, like GatsbyJS, which are fantastic at static sites, that I could have picked up, but I wanted to work simply with React and learn how to put a site together with just React.    
 
-I've also used Bootstrap for most of my layout, nav-bar, and popovers. Bootstrap is really nice because it's the industry standard for many current design and layout paradigms, and offers great plug-and-play features. It was really nice to use it for my responsive layouts. For a simple site, all you'd really need is a fluid container. 
+I've also used Bootstrap for most of my layout, nav-bar, and popovers. Bootstrap is really nice because it's the industry standard for many current design and layout paradigms, and offers great plug-and-play features. It was really nice to use it for my responsive layouts. For a simple site, all you'd really need is a fluid container. When using Bootstrap and routing with [react-router](https://reactrouter.com/?utm_source=reactnl&utm_medium=email), be sure to use a `LinkContainer` from [react-router-bootstrap](https://github.com/react-bootstrap/react-router-bootstrap) to wrap your links to your other pages.
+
+#### Hosting
+
+I bought my domain on NameCheap and hosted the site using Firebase hosting. Firebase hosting is free and super easy to set up. I also used [react-snap](https://github.com/stereobooster/react-snap) to do some pre-rendering for my site to make it faster, in lieu of server-side rendering (for now). Eventually, I [plan](https://github.com/sahilparikh98/sahil-site/issues/12) to move over to server-side rendering. You can read more about pre-rendering for static sites [here](https://create-react-app.dev/docs/pre-rendering-into-static-html-files/).
 
 #### Things to note
 
