@@ -13,7 +13,7 @@ export default class Creative extends React.Component {
   createBlogList = () => {
     return PostInfo.info.map((blog) => {
       return (
-        <Row>
+        <Row className="post-list-padding">
           <Col sm={2}>
             <h4>{blog.date.slice(0, 6)}</h4>
           </Col>
