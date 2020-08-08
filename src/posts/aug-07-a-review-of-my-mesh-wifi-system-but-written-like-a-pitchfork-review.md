@@ -1,4 +1,4 @@
-## a review of my mesh wifi system but written like a pitchfork review?  2 min  humor/tech
+## a review of my mesh wifi system but written like a pitchfork review  2 min  humor/tech
 ---
 
 > ### The tp-link deco s4 mesh wifi system breaks ground with its unadorned simplicity and artistic prowess, and leaves in its wake a profound mechanical discovery.
