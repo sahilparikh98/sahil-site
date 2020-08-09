@@ -31,11 +31,11 @@ export default class ColorWrapper extends React.Component {
     const autoDarkTheme = hour >= 20 || hour < 6;
 
     this.state = {
-      color: autoDarkTheme ? defaultColors.black.rgb : defaultColors.white.rgb,
+      color: autoDarkTheme ? defaultColors.white.rgb : defaultColors.white.rgb,
       textColor: autoDarkTheme
-        ? defaultColors.white.rgb
+        ? defaultColors.black.rgb
         : defaultColors.black.rgb,
-      darkTheme: autoDarkTheme,
+      darkTheme: false,
     };
     document.body.style.backgroundColor = `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`;
   }
